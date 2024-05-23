@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mglobal.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mresults.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="android-large-2">
+      <header class="main-view">
+        <div class="logo5">
+          <img
+            class="logo-icon8"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/logo@2x.png') }}"
+          />
+
+          <div class="app-name">
+            <div class="pomogranate-analyzer8">
+              <p class="pomogranate8">Pomogranate</p>
+              <p class="analyzer8">Analyzer</p>
+            </div>
+          </div>
+        </div>
+        <div class="menu-view">
+          <div class="menu-icon1">
+            <img
+              class="menu-icon-item"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/group-1.svg') }}"
+            />
+          </div>
+        </div>
+      </header>
+      <div class="headline-container">
+        <h3 class="headline2">Results</h3>
+      </div>
+      <section class="results-area">
+        <div class="result-4">
+          <img
+            class="result-background-icon"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('uploaded_file', filename=results[0]['filename']) }}"
+          />
+
+          <div class="diagnosis">
+            {% if results[0]['detected_disease'] == "Healthy" %}
+            <h3 class="diseased-disease-13">{{ results[0]['detected_disease'] }}</h3>
+            {% else %}
+            <h3 class="diseased-disease-13">Diseased: {{ results[0]['detected_disease'] }}</h3>
+            {% endif %}
+            <div class="ailments-list">
+              <!-- <div class="disease-1-97883">Disease 1: 97.88%</div>
+              <div class="disease-2-97883">Disease 2: 97.88%</div>
+              <div class="disease-3-97883">Disease 3: 97.88%</div>
+              <div class="disease-4-97883">Disease 4: 97.88%</div>
+              <div class="disease-5-97883">Disease 5: 97.88%</div> -->
+              <div class="disease-1-97883">Alternaria: {{ results[0]['Alternaria'] }}%</div>
+              <div class="disease-1-97883">Anthracnose: {{ results[0]['Anthracnose'] }}%</div>
+              <div class="disease-1-97883">Bacterial_Blight: {{ results[0]['Bacterial_Blight'] }}%</div>
+              <div class="disease-1-97883">Cercospora: {{ results[0]['Cercospora'] }}%</div>
+              <div class="disease-1-97883">Healthy: {{ results[0]['Healthy'] }}%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="browse-button-container">
+        <button class="browse-button3" id="browseButton">
+          <img class="mdirestart-icon" alt="" src="{{ url_for('static', filename='public/mdirestart.svg') }}" />
+
+          <div class="restart">Restart</div>
+        </button>
+      </div>
+      <section class="footer5">
+        <div class="footer-item"></div>
+        <div class="logo6">
+          <img
+            class="logo-icon9"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/logo-1@2x.png') }}"
+          />
+
+          <div class="pomogranate-analyzer9">
+            <p class="pomogranate9">Pomogranate</p>
+            <p class="analyzer9">Analyzer</p>
+          </div>
+        </div>
+        <div class="copyright-notice">
+          <div class="copyright-pomegranate-container1">
+            <p class="copyright-pomegranate1">
+              Copyright © Pomegranate Analyzer. 
+            </p>
+            <p class="all-rights-reserved1">All rights reserved.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      var browseButton = document.getElementById("browseButton");
+      if (browseButton) {
+        browseButton.addEventListener("click", function (e) {
+          window.location.href = "/";
+        });
+      }
+      </script>
+  </body>
+</html>

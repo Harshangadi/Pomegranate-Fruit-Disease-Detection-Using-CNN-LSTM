@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-5xl: 24px;
+  --font-size-lgi: 19px;
+  --font-size-sm: 14px;
+  --font-size-5xl-9: 24.9px;
+  --font-size-xl: 20px;
+  --font-size-29xl: 48px;
+  --font-size-10xl: 29px;
+  --font-size-9xl: 28px;
+  --font-size-3xl: 22px;
+  --font-size-19xl: 38px;
+
+  /* Colors */
+  --white-25: #fffbf8;
+  --black: #260f01;
+  --red: #da2612;
+  --white-100: #fff1e0;
+  --primary-10: #fef3e5;
+  --gray-1: #3f352f;
+  --white-pure: #fff;
+  --primary-100: #f2ca99;
+  --primary-300: #f2884b;
+  --primary-50: #f9dcb8;
+  --primary-25: #ffe5c6;
+  --color-black: #000;
+
+  /* Gaps */
+  --gap-105xl: 124px;
+  --gap-12xl: 31px;
+  --gap-mini: 15px;
+  --gap-43xl: 62px;
+  --gap-xs: 12px;
+  --gap-5xs: 8px;
+  --gap-sm-8: 13.8px;
+  --gap-smi-5: 12.5px;
+  --gap-24xl: 43px;
+  --gap-base: 16px;
+  --gap-lg: 18px;
+  --gap-2xs: 11px;
+  --gap-29xl: 48px;
+  --gap-5xl: 24px;
+  --gap-xl: 20px;
+  --gap-535xl: 554px;
+  --gap-119xl: 138px;
+  --gap-50xl: 69px;
+  --gap-258xl: 277px;
+  --gap-31xl: 50px;
+  --gap-6xl: 25px;
+  --gap-2xl: 21px;
+  --gap-23xl: 42px;
+
+  /* Paddings */
+  --padding-51xl-2: 70.2px;
+  --padding-81xl: 100px;
+  --padding-61xl: 80px;
+  --padding-6xl: 25px;
+  --padding-27xl: 46px;
+  --padding-33xl: 52px;
+  --padding-31xl: 50px;
+  --padding-3xs-8: 9.8px;
+  --padding-9xs: 4px;
+  --padding-4xs: 9px;
+  --padding-12xs: 1px;
+  --padding-xs: 12px;
+  --padding-mid-4: 17.4px;
+  --padding-6xs-2: 6.2px;
+  --padding-mid-3: 17.3px;
+  --padding-10xs-6: 2.6px;
+  --padding-xl: 20px;
+  --padding-29xl: 48px;
+  --padding-base: 16px;
+  --padding-12xl: 31px;
+  --padding-5xl: 24px;
+  --padding-6xs: 7px;
+  --padding-45xl: 64px;
+  --padding-sm: 14px;
+  --padding-5xs: 8px;
+  --padding-2xs: 11px;
+  --padding-4xl: 23px;
+  --padding-13xl: 32px;
+  --padding-9xl: 28px;
+
+  /* Border radiuses */
+  --br-9xs: 4px;
+  --br-5xs: 8px;
+  --br-11xs: 2px;
+  --br-base: 16px;
+}

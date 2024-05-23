@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global2.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    />
+    <style>
+      .progress {
+  background: var(--primary-25);
+  box-shadow: 0 10px 40px -10px var(--red);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 16px;
+  width: 400px;
+}
+
+.progress-value {
+  animation: load 4s normal forwards;
+  box-shadow: 0 10px 40px -10px var(--red);
+  border-radius: 100px;
+  background: var(--red);
+  height: 10px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 99%; }
+}
+    </style>
+  </head>
+  <body>
+    <div class="hifi-results">
+      <header class="menu">
+        <div class="logo-menu">
+          <img
+            class="logo-icon"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/logo@2x.png') }}"
+          />
+
+          <div class="logo-text">
+            <p class="logo-text-line1">Pomogranate</p>
+            <p class="logo-text-line2">Analyzer</p>
+          </div>
+        </div>
+        <nav class="menu-item-parent">
+          <div class="menu-item">
+            <div class="item8" onclick="window.location.href='/'" >Home</div>
+          </div>
+          <div class="menu-active-item">
+            <div class="active-item">Detect</div>
+          </div>
+          <div class="menu-item">
+            <div class="item">Info</div>
+          </div>
+          <div class="menu-item">
+            <div class="item">About</div>
+          </div>
+        </nav>
+      </header>
+      <section class="hifi-results-inner">
+        <div class="frame-parent4">
+          <div class="results-wrapper">
+            <h1 class="results">Results</h1>
+          </div>
+          <div class="result-parent">
+            {% for result in results %}
+            <div class="result">
+              <img
+                class="result-child"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('uploaded_file', filename=result['filename']) }}"
+              />
+
+              <div class="disease-label-wrapper">
+                <div class="disease-label">
+                  {% if result['detected_disease'] == "Healthy" %}
+                    <h3 class="diseased-disease">{{ result['detected_disease'] }}</h3>
+                  {% else %}
+                    <h3 class="diseased-disease">Diseased: {{ result['detected_disease'] }}</h3>
+                  {% endif %}
+                  <div class="">File Name: {{ result['filename'] }}</div>
+                  <div class="">
+                    Upload Time: dd-mm-yyyy hh:mm:ss
+                  </div>
+                  <div class="">File Size: xx.xxKB</div>
+                  <div class="probabilites">
+                    <div class="">Alternaria: {{ result['Alternaria'] }}%</div>
+                    <div class="progress">
+                      <div class="progress-value"></div>
+                    </div>
+                    <div class="">Anthracnose: {{ result['Anthracnose'] }}%</div>
+                    <div class="progress">
+                      <div class="progress-value"></div>
+                    </div>
+                    <div class="">Bacterial_Blight: {{ result['Bacterial_Blight'] }}%</div>
+                    <div class="progress">
+                      <div class="progress-value"></div>
+                    </div>
+                    <div class="">Cercospora: {{ result['Cercospora'] }}%</div>
+                    <div class="progress">
+                      <div class="progress-value"></div>
+                    </div>
+                    <div class="">Healthy: {{ result['Healthy'] }}%</div>
+                    <div class="progress">
+                      <div class="progress-value"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <footer class="footer-group">
+        <div class="footer3"></div>
+        <div class="frame-child6"></div>
+        <div class="logo-instance-parent">
+          <div class="logo-instance">
+            <div class="footer-logo">
+              <img
+                class="logo-icon5"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/logo@2x.png') }}"
+              />
+
+              <div class="footer-logo-container">
+                <div class="pomogranate-analyzer5">
+                  <p class="pomogranate5">Pomogranate</p>
+                  <p class="analyzer5">Analyzer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pomegranate-disease-detection-group">
+            <h3 class="pomegranate-disease-detection2">
+              Pomegranate Disease Detection
+            </h3>
+            <div class="effective-disease-detection-in-wrapper">
+              <div class="effective-disease-detection2">
+                Effective Disease Detection in Pomegranate using CNN and LSTM
+                method.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-links-title-wrapper">
+          <div class="main-links-title">
+            <h3 class="main-links2">Main Links</h3>
+            <div class="frame-parent5">
+              <div class="home-container">
+                <div class="home2">Home</div>
+              </div>
+              <div class="detect2">Detect</div>
+              <div class="history2">History</div>
+              <div class="about2">About</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-wrapper4">
+          <div class="team-social-media-container">
+            <h3 class="team-social2">Team - Social Media</h3>
+            <div class="frame-wrapper5">
+              <div class="mohammed-awaf-container">
+                <div class="mohammed-awaf2">Mohammed Awaf</div>
+                <div class="nitin-yadawad2">Nitin Yadawad</div>
+                <div class="harsh-angadi2">Harsh Angadi</div>
+                <div class="mohammed-umar2">Mohammed Umar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

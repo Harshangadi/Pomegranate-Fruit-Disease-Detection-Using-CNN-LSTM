@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="hifi-home">
+      <header class="menu">
+        <div class="logo-menu">
+          <img
+            class="logo-icon"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/logo@2x.png') }}"
+          />
+
+          <div class="logo-text">
+            <p class="logo-text-line1">Pomogranate</p>
+            <p class="logo-text-line2">Analyzer</p>
+          </div>
+        </div>
+        <nav class="menu-item-parent">
+          <div class="menu-active-item">
+            <div class="active-item">Home</div>
+          </div>
+          <div class="menu-item">
+            <div class="item"onclick="window.location.href='/detect'" >Detect</div>
+          </div>
+          <div class="menu-item">
+            <div class="item">Info</div>
+          </div>
+          <div class="menu-item">
+            <div class="item">About</div>
+          </div>
+        </nav>
+      </header>
+      <section class="content">
+        <div class="hero-parent">
+          <div class="hero"></div>
+          <div class="introduction">
+            <div class="welcome-message">
+              <div class="project-description">
+                <h1 class="welcome-to-our">
+                  Welcome to our Pomegranate Disease Detection Project
+                </h1>
+                <div class="this-website-is">
+                  This Website is for demonstrating our final year project.
+                  Enjoy the project
+                </div>
+              </div>
+              <button class="detect-now" id="detectNow" onclick="redirectToDetect()">
+                <div class="detect-now1">Detect Now</div>
+              </button>
+            </div>
+          </div>
+          <div class="image-slideshow">
+            <img
+              class="img-20230910-102304-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img-20230910-102304@2x.png') }}"
+            />
+
+            <img
+              class="img20230917110902-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img20230917110902@2x.png') }}"
+            />
+          </div>
+        </div>
+      </section>
+      <div class="try-sample-images-wrapper">
+        <h2 class="try-sample-images">Try Sample Images</h2>
+      </div>
+      <section class="image-collection">
+        <div class="image-set">
+          <div class="image-scroller">
+            <img
+              class="img-20230813-151923-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img-20230813-151923@2x.png') }}"
+            />
+
+            <img
+              class="img20230917113457-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img20230917113457@2x.png') }}"
+            />
+
+            <img
+              class="img-20230910-102304-icon1"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img-20230910-102304@2x.png') }}"
+            />
+
+            <img
+              class="img20230917110902-icon1"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img20230917110902@2x.png') }}"
+            />
+
+            <img
+              class="img-20230813-090426-1-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img-20230813-090426-1@2x.png') }}"
+            />
+
+            <img
+              class="img20230917113603-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img20230917113603@2x.png') }}"
+            />
+
+            <img
+              class="img-20230903-115118-1-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img-20230903-115118-1@2x.png') }}"
+            />
+
+            <img
+              class="img20230917111859crop-icon"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/img20230917111859crop@2x.png') }}"
+            />
+          </div>
+          <div class="image-scroll">
+            <div class="image-scroll-display">
+              <img
+                class="mingcuteleft-fill-icon"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/mingcuteleftfill.svg') }}"
+              />
+
+              <div class="image-scroll-display-inner">
+                <div class="frame-inner"></div>
+              </div>
+              <div class="image-scroll-display-child">
+                <div class="ellipse-div"></div>
+              </div>
+              <div class="image-scroll-display-child">
+                <div class="ellipse-div"></div>
+              </div>
+              <div class="image-scroll-display-child">
+                <div class="ellipse-div"></div>
+              </div>
+              <div class="image-scroll-display-child">
+                <div class="ellipse-div"></div>
+              </div>
+              <img
+                class="mingcuteright-fill-icon"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/mingcuterightfill.svg') }}"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="feedback">
+        <div class="rate-us"></div>
+        <div class="feedback-form">
+          <div class="rating">
+            <div class="star-rating">
+              <img
+                class="stars-icon"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/star-1.svg') }}"
+              />
+
+              <img
+                class="stars-icon1"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/star-1.svg') }}"
+              />
+
+              <img
+                class="stars-icon2"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/star-1.svg') }}"
+              />
+
+              <img
+                class="stars-icon3"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/star-1.svg') }}"
+              />
+
+              <img
+                class="stars-icon4"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/star-1.svg') }}"
+              />
+            </div>
+            <h3 class="anything-to-suggest">Anything to suggest</h3>
+            <textarea
+              id = "comment-box"
+              class="comment-box"
+              placeholder="Type Here"
+              rows="{8}"
+              cols="{16}"
+            >
+            </textarea>
+            <button class="upload">
+              <div class="submit">Submit</div>
+            </button>
+            <button class="add-button">
+              hello
+            </button>
+          </div>
+        </div>
+        <h1 class="rate-us1">Rate Us!</h1>
+      </section> -->
+      <footer class="footer">
+        <div class="branding">
+        <div class="divider"><div class="logo-container">
+          <div class="logo">
+            <img
+              class="logo-icon1"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/logo-1@2x.png') }}"
+            />
+
+            <div class="pomogranate-analyzer-wrapper">
+              <div class="pomogranate-analyzer1">
+                <p class="pomogranate1">Pomogranate</p>
+                <p class="analyzer1">Analyzer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+          <div class="project-title-container">
+            <h3 class="pomegranate-disease-detection">
+              Pomegranate Disease Detection
+            </h3>
+            <div class="project-description-container">
+              <div class="effective-disease-detection">
+                Effective Disease Detection in Pomegranate using CNN and LSTM
+                method.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="links-and-social-wrapper">
+          <div class="links-and-social">
+            <h3 class="main-links">Main Links</h3>
+            <div class="navigation-and-team">
+              <div class="page-links-and-team">
+                <div class="home">Home</div>
+              </div>
+              <div class="detect">Detect</div>
+              <div class="history">History</div>
+              <div class="about">About</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-inner">
+          <div class="team-social-media-parent">
+            <h3 class="team-social">Team - Social Media</h3>
+            <div class="frame-wrapper">
+              <div class="mohammed-awaf-parent">
+                <div class="mohammed-awaf">Mohammed Awaf</div>
+                <div class="nitin-yadawad">Nitin Yadawad</div>
+                <div class="harsh-angadi">Harsh Angadi</div>
+                <div class="mohammed-umar">Mohammed Umar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // var detectNow = document.getElementById("detectNow");
+      // if (detectNow) {
+      //   detectNow.addEventListener("click", function (e) {
+      //     window.location.href = "{{ url_for('detect') }}";
+      //   });
+      // }
+      
+      function redirectToDetect() {
+      window.location.href = "{{ url_for('detect') }}";
+    }
+      </script>
+  </body>
+</html>

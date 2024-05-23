@@ -1,0 +1,23 @@
+{
+    "name": "Pomegranate Analyzer",
+    "short_name": "PMA",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#F2CA99",
+    "background_color": "#F2913D",
+    "icons": [
+      {
+        "src": "logo.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+    ]
+  }

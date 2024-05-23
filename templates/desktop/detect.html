@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detect.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="lofi-detect">
+      <header class="menu">
+        <div class="logo-menu">
+          <img
+            class="logo-icon"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/logo@2x.png') }}"
+          />
+
+          <div class="logo-text">
+            <p class="logo-text-line1">Pomogranate</p>
+            <p class="logo-text-line2">Analyzer</p>
+          </div>
+        </div>
+        <nav class="menu-item-parent">
+          <div class="menu-item">
+            <div class="item" onclick="window.location.href='/'" >Home</div>
+            <!-- <div class="item"><a class="item" href="{{ url_for('index') }}">Home</a></div> -->
+          </div>
+          <div class="menu-active-item">
+            <div class="active-item">Detect</div>
+          </div>
+          <div class="menu-item">
+            <div class="item">Info</div>
+          </div>
+          <div class="menu-item">
+            <div class="item">About</div>
+          </div>
+        </nav>
+      </header>
+      <section class="lofi-detect-inner">
+        <div class="frame-parent">
+          <div class="frame-group">
+            <div class="frame-wrapper">
+              <div class="frame-container">
+                <div class="detect-disease-in-pomegranate-wrapper">
+                  <h1 class="detect-disease-in">
+                    Detect Disease in Pomegranate
+                  </h1>
+                </div>
+                <div class="an-machine-learning">
+                  An Machine learning tool to detect disease from pomegranate
+                  images. Upload image ang detect disease.
+                </div>
+              </div>
+            </div>
+            <div class="rectangle-parent">
+              <div class="frame-child"></div>
+              <div class="drop-area" id="drop-zone">
+                <div class="frame-item"></div>
+                <div class="image-10-wrapper">
+                  <img
+                    class="image-10-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{{ url_for('static', filename='public/image-10@2x.png') }}"
+                  />
+                </div>
+                <div class="drag-and-drop-your-images-parent">
+                  <div class="drag-and-drop">Drag and Drop Your Images</div>
+                  <div class="frame-div">
+                    <!-- <button class="browse-from-device-wrapper">
+                      <div class="browse-from-device">Browse from Device</div>
+                    </button> -->
+                    <label for="fileInput" class="browse-from-device-wrapper"><div class="browse-from-device">Browse from Device</div></label>
+                      <input type="file" id="fileInput" accept="image/*" class="form-control-file" style="display: none;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="try-sample-images-parent">
+            <h2 class="try-sample-images">Try Sample Images</h2>
+            <div class="image-set">
+              <div class="image-scroller">
+                <img
+                  class="img-20230813-151923-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img-20230813-151923@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img_20230.png'"
+                />
+
+                <img
+                  class="img20230917113457-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img20230917113457@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img_20230.png'"
+                />
+
+                <img
+                  class="img-20230910-102304-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img-20230910-102304@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img-20230910-102304@2x.png'"
+                />  
+
+                <img
+                  class="img20230917110902-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img20230917110902@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img20230917110902@2x.png'"
+                />  
+
+                <img
+                  class="img-20230813-090426-1-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img-20230813-090426-1@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img-20230813-090426-1@2x.png'"
+                />
+
+                <img
+                  class="img20230917113603-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img20230917113603@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img20230917113603@2x.png'"
+                />
+
+                <img
+                  class="img-20230903-115118-1-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img-20230903-115118-1@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img-20230903-115118-1.jpg'"
+                />
+
+                <img
+                  class="img20230917111859crop-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='public/img20230917111859crop@2x.png') }}"
+                  onclick="window.location.href='/results?filename=img20230917111859crop.jpg'"
+                />
+              </div>
+              <div class="image-scroll-display-wrapper">
+                <div class="image-scroll-display">
+                  <img
+                    class="mingcuteleft-fill-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{{ url_for('static', filename='public/mingcuteleftfill.svg') }}"
+                  />
+
+                  <div class="image-scroll-display-inner">
+                    <div class="frame-inner"></div>
+                  </div>
+                  <div class="image-scroll-display-child">
+                    <div class="ellipse-div"></div>
+                  </div>
+                  <div class="image-scroll-display-child">
+                    <div class="ellipse-div"></div>
+                  </div>
+                  <div class="image-scroll-display-child">
+                    <div class="ellipse-div"></div>
+                  </div>
+                  <div class="image-scroll-display-child">
+                    <div class="ellipse-div"></div>
+                  </div>
+                  <img
+                    class="mingcuteright-fill-icon"
+                    loading="lazy"
+                    alt=""
+                    src="{{ url_for('static', filename='public/mingcuterightfill.svg') }}"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="rectangle-container">
+        <div class="rectangle-div"></div>
+        <div class="frame-child4"></div>
+        <div class="frame-parent1">
+          <div class="logo-wrapper">
+            <div class="logo">
+              <img
+                class="logo-icon1"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/logo-1@2x.png') }}"
+              />
+
+              <div class="disease-analyzer">
+                <div class="pomogranate-analyzer1">
+                  <p class="pomogranate1">Pomogranate</p>
+                  <p class="analyzer1">Analyzer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pomegranate-disease-detection-parent">
+            <h3 class="pomegranate-disease-detection">
+              Pomegranate Disease Detection
+            </h3>
+            <div class="c-p-l-x-analysis">
+              <div class="effective-disease-detection">
+                Effective Disease Detection in Pomegranate using CNN and LSTM
+                method.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-wrapper1">
+          <div class="main-links-parent">
+            <h3 class="main-links">Main Links</h3>
+            <div class="frame-parent2">
+              <div class="home-wrapper">
+                <div class="home">Home</div>
+              </div>
+              <div class="detect">Detect</div>
+              <div class="history">History</div>
+              <div class="about">About</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-wrapper2">
+          <div class="team-social-media-parent">
+            <h3 class="team-social">Team - Social Media</h3>
+            <div class="frame-wrapper3">
+              <div class="mohammed-awaf-parent">
+                <div class="mohammed-awaf">Mohammed Awaf</div>
+                <div class="nitin-yadawad">Nitin Yadawad</div>
+                <div class="harsh-angadi">Harsh Angadi</div>
+                <div class="mohammed-umar">Mohammed Umar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+
+      // prevent the default behavior of web browser
+      ['dragleave', 'drop', 'dragenter', 'dragover'].forEach(function (evt) {
+      document.addEventListener(evt, function (e) {
+        e.preventDefault();
+        }, false);
+      });
+
+    var drop_area = document.getElementById('drop-zone');
+    drop_area.addEventListener('drop', function (e) {
+        e.preventDefault();
+        var fileList = e.dataTransfer.files; // the files to be uploaded
+        handleFiles(fileList);
+    }, false);
+
+    // Triggered when files are selected from the file input
+    document.getElementById('fileInput').addEventListener('change', function (e) {
+        var fileList = e.target.files; // the files to be uploaded
+        handleFiles(fileList);
+    });
+
+        function handleFiles(files) {
+        if (files.length == 0) {
+            return false;
+        }
+
+        // we use XMLHttpRequest here instead of fetch, because with the former we can easily implement progress and speed.
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', '/upload', true); // assume that the url /upload handles uploading.
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // uploading is successful
+                window.location.href = '/results'; // Redirect to the results page
+            }
+        };
+
+        // show uploading progress
+        var lastTime = Date.now();
+        var lastLoad = 0;
+        xhr.upload.onprogress = function (event) {
+            if (event.lengthComputable) {
+                // update progress
+                var percent = Math.floor(event.loaded / event.total * 100);
+                document.getElementById('upload_progress').textContent = percent + '%';
+
+                // update speed
+                var curTime = Date.now();
+                var curLoad = event.loaded;
+                var speed = ((curLoad - lastLoad) / (curTime - lastTime) / 1024).toFixed(2);
+                document.getElementById('speed').textContent = speed + 'MB/s'
+                lastTime = curTime;
+                lastLoad = curLoad;
+            }
+        };
+
+        // send files to server
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        var fd = new FormData();
+        for (let file of files) {
+            fd.append('files', file);
+        }
+        lastTime = Date.now();
+        xhr.send(fd);
+    }
+    </script>
+  </body>
+</html>

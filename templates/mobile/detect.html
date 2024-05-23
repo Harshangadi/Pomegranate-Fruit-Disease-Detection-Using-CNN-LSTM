@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="theme-color" content="#F2CA99">
+    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mglobal.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdetect.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="android-large-1">
+      <section class="main-layout">
+        <header class="content-container">
+          <div class="logo3">
+            <img
+              class="logo-icon6"
+              loading="lazy"
+              alt=""
+              src="{{ url_for('static', filename='public/logo@2x.png') }}"
+            />
+
+            <div class="header">
+              <h2 class="pomogranate-analyzer6">
+                <p class="pomogranate6">Pomogranate</p>
+                <p class="analyzer6">Analyzer</p>
+              </h2>
+            </div>
+          </div>
+          <div class="navigation">
+            <div class="menu-icon">
+              <img
+                class="menu-icon-child"
+                loading="lazy"
+                alt=""
+                src="{{ url_for('static', filename='public/group-1.svg') }}"
+              />
+            </div>
+          </div>
+        </header>
+      </section>
+      <button class="browse-button1" id="add-button">
+        Install App
+      </button>
+      <section class="body">
+        <div class="main-area">
+          <div class="headline-parent">
+            <h1 class="headline1">Detect Disease in Pomegranate</h1>
+            <div class="upload-options">
+              <div class="drop1"></div>
+              <div class="camera-option">
+                <div class="drop-area1"></div>
+                <div class="camera-preview">
+                  <div class="image-11-parent">
+                    <img
+                      class="image-11-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{{ url_for('static', filename='public/image-10@2x.png') }}"
+                    />
+
+                    <img
+                      class="camera-6176139-1-icon"
+                      loading="lazy"
+                      alt=""
+                      src="{{ url_for('static', filename='public/camera-6176139-1@2x.png') }}"
+                    />
+                  </div>
+                </div>
+                <div class="upload-or-capture">
+                  Upload or capture using camera
+                </div>
+                <div class="file-option">
+                  <div class="browse-options">
+                    <button class="browse-button1" id="browseButton">
+                      <!-- <div class="">Browse Device</div> -->
+                      <label for="fileInput" class="browse-from-device-wrapper"><div class="browse-device">Browse Device</div></label>
+                      <input type="file" id="fileInput" accept="image/*" class="form-control-file" style="display: none;">
+                    </button>
+                    <!-- <div class="browse-button2" id="browseButtonContainer">
+                      <img
+                        class="solarcamera-linear-icon"
+                        loading="lazy"
+                        alt=""
+                        src="{{ url_for('static', filename='public/solarcameralinear.svg') }}"
+                      />
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sample-option">
+            <h1 class="try-sample-images2">Try Sample Images</h1>
+          </div>
+        </div>
+      </section>
+      <section class="gallery">
+        <div class="gallery-child"></div>
+        <div class="image-scroller2">
+          <img
+            class="img-20230813-151923-icon2"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img-20230813-151923@2x.png') }}"
+            id="iMG20230813151923Image"
+          />
+
+          <img
+            class="img20230917113457-icon2"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img20230917113457@2x.png') }}"
+          />
+
+          <img
+            class="img-20230910-102304-icon3"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img-20230910-102304@2x.png') }}"
+          />
+
+          <img
+            class="img20230917110902-icon3"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img20230917110902@2x.png') }}"
+          />
+
+          <img
+            class="img-20230813-090426-1-icon2"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img-20230813-090426-1@2x.png') }}"
+          />
+
+          <img
+            class="img20230917113603-icon2"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img20230917113603@2x.png') }}"
+          />
+
+          <img
+            class="img-20230903-115118-1-icon2"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img-20230903-115118-1@2x.png') }}"
+          />
+
+          <img
+            class="img20230917111859crop-icon2"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/img20230917111859crop@2x.png') }}"
+          />
+        </div>
+      </section>
+      <section class="footer4">
+        <div class="footer-child"></div>
+        <div class="logo4">
+          <img
+            class="logo-icon7"
+            loading="lazy"
+            alt=""
+            src="{{ url_for('static', filename='public/logo-1@2x.png') }}"
+          />
+
+          <div class="pomogranate-analyzer7">
+            <p class="pomogranate7">Pomogranate</p>
+            <p class="analyzer7">Analyzer</p>
+          </div>
+        </div>
+        <div class="copyright-info">
+          <div class="copyright-pomegranate-container">
+            <p class="copyright-pomegranate">
+              Copyright © Pomegranate Analyzer.
+            </p>
+            <p class="all-rights-reserved">All rights reserved.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
+    <script>
+      // var browseButton = document.getElementById("browseButton");
+      // if (browseButton) {
+      //   browseButton.addEventListener("click", function (e) {
+      //     window.location.href = "./android-large1.html";
+      //   });
+      // }
+
+      document.getElementById('fileInput').addEventListener('change', function (e) {
+        var fileList = e.target.files; // the files to be uploaded
+        handleFiles(fileList);
+    });
+
+        function handleFiles(files) {
+        if (files.length == 0) {
+            return false;
+        }
+
+        // we use XMLHttpRequest here instead of fetch, because with the former we can easily implement progress and speed.
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', '/upload', true); // assume that the url /upload handles uploading.
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // uploading is successful
+                window.location.href = '/results'; // Redirect to the results page
+            }
+        };
+        // send files to server
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        var fd = new FormData();
+        for (let file of files) {
+            fd.append('files', file);
+        }
+        lastTime = Date.now();
+        xhr.send(fd);
+    }
+      </script>
+  </body>
+</html>
