@@ -1,37 +1,43 @@
 from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory
 from werkzeug.utils import secure_filename
 import os
-# from handlers.routes import configure_routes
+import shutil
+from datetime import datetime
+
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = "uploads"
+
+# create a folder to store images
+if not os.path.exists(os.path.join(os.getcwd(), 'uploads')):
+    os.makedirs(os.path.join(os.getcwd(), 'uploads'))
+
+app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
 app.config['SECRET_KEY'] = 'supersecretkeygoeshere'
 
-# configure_routes(app)
-
-with open("modelpath.txt") as f:
-    path = f.read().strip()
+path = os.path.join(os.getcwd(), "Model", "model.h5")
+# For azure
+    
+# Download and save the model
+# download_model(model_url, save_path)
 
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import PIL
 
+
 # Load the trained model
 model = load_model(path)
+
 # Define the target image size
 target_size = (256, 256)
 
 def preprocess_image(file_path):
-    print(file_path)
-    file_path = os.path.join(app.config['UPLOAD_FOLDER'], file_path)
-    print(file_path)
     img = image.load_img(file_path, target_size=target_size)
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
     return img_array / 255.0  # Normalize the image
-
 
 def detect_disease(file=""):
     print(file)
@@ -44,7 +50,6 @@ def detect_disease(file=""):
     predicted_class = class_labels[class_index]
     result = {
         'detected_disease': predicted_class,
-        'filename': file,
         'Alternaria': f"{(predictions[0][0]*100):.02f}",
         'Anthracnose': f"{(predictions[0][1]*100):.02f}",
         'Bacterial_Blight': f"{(predictions[0][2]*100):.02f}",
@@ -71,6 +76,8 @@ def sw():
 def index():
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.lower()
+
+    print(user_agent)
 
     if "android" in user_agent or "iphone" in user_agent:
         return render_template('mobile/detect.html')
@@ -111,14 +118,26 @@ def results(file_urls=None):
     print(user_agent)
     # set the file_urls and remove the session variable
     if "file_urls" not in session or session['file_urls'] == []:
-        file_urls = [request.args.get('filename')]
+        file = request.args.get('filename')
+        # check if the file is present in the upload folder
+        if not os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'], file)):
+            # copy file from static/public folder to uploads folder using shutil
+            shutil.copy(os.path.join(os.getcwd(), 'static', 'public', file), os.path.join(app.config['UPLOAD_FOLDER'], file))
+        file_urls = [file]
     else:
         file_urls = session.pop('file_urls', [])
     # file_urls = ["IMG_20230813_151923.jpg", "IMG_20230910_102304.jpg"]
     print(file_urls)
     dis_results = []
     for file in file_urls:
-        res = detect_disease(file)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], file)
+        res = detect_disease(file_path)
+        file_stat = os.stat(file_path)
+        upload_time = datetime.fromtimestamp(file_stat.st_mtime)
+        res['filename'] = file
+        print(res['filename'])
+        res["upload_time"] = upload_time
+        res["size"] = file_stat.st_size
         dis_results.append(res)
 
     if "android" in user_agent or "iphone" in user_agent:
@@ -132,6 +151,16 @@ def results(file_urls=None):
 def detect():
     return render_template('desktop/detect.html')
 
-app.run(debug=True)
+@app.route('/info')
+def info():
+    return render_template('desktop/hifi-under-development.html')
+
+@app.route('/help')
+def help():
+    return render_template('desktop/hifi-help.html')
+
+if __name__ == '__main__':
+    # app.run(host='192.168.175.193', debug=True)
+    app.run(debug=True)
 
 
